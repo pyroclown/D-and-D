@@ -1,7 +1,9 @@
 import math
 import random
+
+
 def genNumber():
-    numbers = [random.randrange(1,6),random.randrange(1,6),random.randrange(1,6),random.randrange(1,6)]
+    numbers = [random.randrange(1,6),random.randrange(1,6),random.randrange(1,6),random.randrange(1,6), random.randrange(1,6)]
     numbers.sort()
     numbers.pop(0)
     rawScore = 0
@@ -307,6 +309,7 @@ classHealth = {
     "Wizard" : 6
 }
 
+
 raceOptions[race]()
 classOptions[type]()
 
@@ -322,14 +325,17 @@ health = classHealth[type] + modConstitution
 playerName = input("Player Name: ")
 playerHeight = input("Character Height: ")
 playerWeight = input("Character Weight: ")
-
+playerGender = input("Gender: ")
+playerBackground = input("Background: ")
 
 
 f = open(playerName + ".txt", "w")
 f.write("Player Name: " + playerName + "\n")
+f.write("Gender: " + playerGender + "\n")
 f.write("Race: " + race + "\n")
 f.write("Class: " + type + "\n")
 f.write("\n")
+f.write("Background: " + playerBackground + "\n")
 f.write("Height: " +  playerHeight + "\n")
 f.write("Weight: " + playerWeight + "\n")
 f.write("\n")
