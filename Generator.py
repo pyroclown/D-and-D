@@ -320,7 +320,19 @@ modCharisma = (charisma - 10) // 2
 health = classHealth[type] + modConstitution
 
 playerName = input("Player Name: ")
+playerHeight = input("Character Height: ")
+playerWeight = input("Character Weight: ")
+
+
+
 f = open(playerName + ".txt", "w")
+f.write("Player Name: " + playerName + "\n")
+f.write("Race: " + race + "\n")
+f.write("Class: " + type + "\n")
+f.write("\n")
+f.write("Height: " +  playerHeight + "\n")
+f.write("Weight: " + playerWeight + "\n")
+f.write("\n")
 f.write("Strength: " + str(strength) + " " + str(modStrength) + "\n")
 f.write("Dexterity: " + str(dexterity) + " " + str(modDexterity) + "\n")
 f.write("Constitution: " + str(constitution) + " " + str(modConstitution) + "\n")
