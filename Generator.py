@@ -280,6 +280,7 @@ def addWizard():
     wisdom += abilityScores[2]
     charisma += abilityScores[0]
 
+
 classOptions = {
     "Barbarian" : addBarbarian,
     "Bard" : addBard,
@@ -308,6 +309,36 @@ classHealth = {
     "Warlock" : 8,
     "Wizard" : 6
 }
+raceText = {
+    "Human" : "T",
+    "Hill Dwarf" : "",
+    "Mountain Dwarf" : "",
+    "High Elf" : "",
+    "Wood Elf" : "",
+    "Dark Elf" : "",
+    "Lightfoot Halfling" : "",
+    "Stout Halfling" : "",
+    "Dragonborn" : "",
+    "Forest Gnome" : "",
+    "Rock Gnome" : "",
+    "Half Elf" : "",
+    "Half Orc" : "",
+    "Tiefling" : ""
+}
+classText = {
+    "Barbarian" : "T",
+    "Bard" : "",
+    "Cleric" : "",
+    "Druid" : "",
+    "Fighter" : "",
+    "Monk" : "",
+    "Paladin" : "",
+    "Ranger" : "",
+    "Rouge" : "",
+    "Sourcerer" : "",
+    "Warlock" : "",
+    "Wizard" : "",
+}
 
 
 raceOptions[race]()
@@ -322,6 +353,9 @@ modCharisma = (charisma - 10) // 2
 
 health = classHealth[type] + modConstitution
 
+raceTraits = raceText[race]
+classTraits = classText[type]
+
 playerName = input("Player Name: ")
 playerHeight = input("Character Height: ")
 playerWeight = input("Character Weight: ")
@@ -334,6 +368,9 @@ f.write("Player Name: " + playerName + "\n")
 f.write("Gender: " + playerGender + "\n")
 f.write("Race: " + race + "\n")
 f.write("Class: " + type + "\n")
+f.write("\n")
+f.write("Racial Traits: " + str(raceTraits) + "\n")
+f.write("Class Traits: " + str(classTraits) + "\n")
 f.write("\n")
 f.write("Background: " + playerBackground + "\n")
 f.write("Height: " +  playerHeight + "\n")
