@@ -94,7 +94,7 @@ def addHalfElf():
     global wisdom
     global charisma
     charisma += 2
-    dexterity += 1
+    constitution += 1
 def addHalfOrc():
     global strength
     global constitution
@@ -291,7 +291,7 @@ classOptions = {
     "Paladin" : addPaladin,
     "Ranger" : addRanger,
     "Rouge" : addRouge,
-    "Sourcerer" : addSorcerer,
+    "Sorcerer" : addSorcerer,
     "Warlock" : addWarlock,
     "Wizard" : addWizard
 }
@@ -305,7 +305,7 @@ classHealth = {
     "Paladin" : 10,
     "Ranger" : 10,
     "Rouge" : 8,
-    "Sourcerer" : 6,
+    "Sorcerer" : 6,
     "Warlock" : 8,
     "Wizard" : 6
 }
@@ -326,18 +326,18 @@ raceText = {
     "Tiefling" : "\n-Darkvision \n-Resistant to fire damage \n-Know thaumaturgy cantrip"
 }
 classText = {
-    "Barbarian" : "Test Works",
-    "Bard" : "Confirmed",
-    "Cleric" : "",
-    "Druid" : "",
-    "Fighter" : "",
-    "Monk" : "",
-    "Paladin" : "",
-    "Ranger" : "",
-    "Rouge" : "",
-    "Sourcerer" : "",
-    "Warlock" : "",
-    "Wizard" : "",
+    "Barbarian" : "\n-Rage: may rage 2 times inbetween rests. Rage adds 2 damage to melee attacks. \n-Gain resistance to Bludgeoning, Piercing, and Slashing  \n-Add constitution to AC when wearing no armor",
+    "Bard" : "\n-May grant a creature 1d6 to use on any roll using a d20 \n   Must be used within 10 min \n   Can be used a number of times equal to Charisma modifier.",
+    "Cleric" : "\n-Select Divine Domain, pg. 59",
+    "Druid" : "\n-Gain Druidic as a language",
+    "Fighter" : "\n-Fighting style: \n   Archery: +2 ranged attack rolls \n   Defense: +1 AC \n   Dueling: +2 damage when using 1 weapon \n   Great Weapon Fighting: Reroll dice showing 1 or 2 for damage with 2 handed weapons. \n-Can regen 1d10+level health inbetween rests",
+    "Monk" : "\n-Add wisdom modifier to AC when wearing no armor \n-Use Dexterity for unarmed attack rolls \n-Roll d4 for unarmed damage \n-May make additional unarmed attack as a bonus action",
+    "Paladin" : "\n-Can detect evil and good, can use 1 + Charisma modifier times inbetween long rests \n-Can heal creatures for 5 x level HP ",
+    "Ranger" : "\n-Choose monster type as favored enemy \n   Advantage on tracking checks against favored enemy \n   Can speak one language spoken by favored enemy \n-Select favored terrain \n   Unable to become lost or slowed \n   Always alert to danger \n   Learn all details of creature while tracking",
+    "Rouge" : "\n-Add 1d6 to damage when you have advantage or targtet is engaged in melee combat \n-Theives cant, aware of hidden signs from other rouges",
+    "Sorcerer" : "\n-Select Sourcerers Origin, pg. 101",
+    "Warlock" : "\n-No Additional Class Traits",
+    "Wizard" : "\n-May regain 10 x level mana inbetween long rests"
 }
 baseSpeed = {
     "Human" : "30",
@@ -371,6 +371,20 @@ baseLanguage = {
     "Half Orc" : "Common, Orcish",
     "Tiefling" : "Common, Infernal"
 }
+baseGold = {
+    "Barbarian" : random.randrange(1,4) + random.randrange(1,4),
+    "Bard": random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4),
+    "Cleric" : random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4),
+    "Druid" : random.randrange(1,4)+ random.randrange(1,4),
+    "Fighter" : random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4),
+    "Monk" : random.randrange(1,2),
+    "Paladin" : random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4),
+    "Ranger" : random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4),
+    "Rouge" : random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4),
+    "Sorcerer" : random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4),
+    "Warlock" : random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4),
+    "Wizard" : random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4)
+}
 
 
 raceOptions[race]()
@@ -389,6 +403,7 @@ raceTraits = raceText[race]
 classTraits = classText[type]
 raceSpeed = baseSpeed[race]
 language = baseLanguage[race]
+gold = baseGold[type]
 
 playerName = input("Player Name: ")
 characterName = input("Character Name: ")
@@ -425,4 +440,5 @@ f.write("\n")
 f.write("Base Speed: " + str(raceSpeed) + "\n")
 f.write("Languages: " + str(language) + "\n")
 f.write("\n")
+f.write("Gold: " + str(gold) + "0" + "\n")
 f.close()
