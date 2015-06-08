@@ -94,7 +94,7 @@ def addHalfElf():
     global wisdom
     global charisma
     charisma += 2
-    # to do add random
+    dexterity += 1
 def addHalfOrc():
     global strength
     global constitution
@@ -310,24 +310,24 @@ classHealth = {
     "Wizard" : 6
 }
 raceText = {
-    "Human" : "T",
-    "Hill Dwarf" : "",
-    "Mountain Dwarf" : "",
-    "High Elf" : "",
-    "Wood Elf" : "",
-    "Dark Elf" : "",
-    "Lightfoot Halfling" : "",
-    "Stout Halfling" : "",
-    "Dragonborn" : "",
-    "Forest Gnome" : "",
-    "Rock Gnome" : "",
-    "Half Elf" : "",
-    "Half Orc" : "",
-    "Tiefling" : ""
+    "Human" : "\n-No Additional Racial Traits",
+    "Hill Dwarf" : "\n-Darkvision \n-Advantage on poision rolls \n-Resistant to poision damage \n-Proficient with Battleaxe, Handaxe, Throwing Hammer, Warhammer \n-Proficient with 1 artisans tool \n-+1 to HP per level",
+    "Mountain Dwarf" : "\n-Darkvision \n-Advantage on poision rolls \n-Resistant to poision damage \n-Proficient with Battleaxe, Handaxe, Throwing Hammer, Warhammer \n-Proficient with 1 artisans tool \n-Proficient with light/medium armor",
+    "High Elf" : "\n-Darkvision \n-Advantage on throws against being charmed and immune to sleep \n-Meditate instead of sleeping \n-Proficient with Longsword, Shortsword, Shortbow, and Longbow \n-One Cantrip",
+    "Wood Elf" : "\n-Darkvision \n-Advantage on throws against being charmed and immune to sleep \n-Meditate instead of sleeping \n-Proficient with Longsword, Shortsword, Shortbow, and Longbow \n-Can hide in light obstruction",
+    "Dark Elf" : "\n-Improved Darkvision \n-Advantage on throws against being charmed and immune to sleep \n-Meditate instead of sleeping \n-Disadvantage on rolls in sunlight \n-Proficient with Rapiers, Shortswords, and Hand Crossbows",
+    "Lightfoot Halfling" : "\n-May reroll a 1 and use new roll \n-Advantage against being frightened \n-Can attempt to hide even when obscured only by another creature",
+    "Stout Halfling" : "\n-May reroll a 1 and use new roll \n-Advantage against being frightened \n-Advantage against poision rolls \n Resistant to poision",
+    "Dragonborn" : "\n-Breath attack does 2d6 on failed save \n-Resistance to breath damage type attacks",
+    "Forest Gnome" : "\n-Darkvision \n-Advantage against rolls concerning magic in any way \n-Know minor illusion cantrip \n-Can communicate with small or tiny beasts",
+    "Rock Gnome" : "\n-Darkvision \n-Advantage against rolls concerning magic in any way \n-Double proficiency bonus to History checks \n-Proficient with Tinkers Tools \n-Can create Clockwork toy, Fire Starter, and Music Box. Costs 10gp and 1 hour",
+    "Half Elf" : "\n-Darkvision \n-Advantage on throws against beign charmed and immune to sleep \n-Gain 2 additional skill proficiencies",
+    "Half Orc" : "\n-Darkvision \n-Proficient in intimidation \n-Can choose to regain 1 HP when downed once inbetween long rests \n-Crit for 3x damage",
+    "Tiefling" : "\n-Darkvision \n-Resistant to fire damage \n-Know thaumaturgy cantrip"
 }
 classText = {
-    "Barbarian" : "T",
-    "Bard" : "",
+    "Barbarian" : "Test Works",
+    "Bard" : "Test Works",
     "Cleric" : "",
     "Druid" : "",
     "Fighter" : "",
@@ -338,6 +338,38 @@ classText = {
     "Sourcerer" : "",
     "Warlock" : "",
     "Wizard" : "",
+}
+baseSpeed = {
+    "Human" : "30",
+    "Hill Dwarf" : "25",
+    "Mountain Dwarf" : "25",
+    "High Elf" : "30",
+    "Wood Elf" : "35",
+    "Dark Elf" : "30",
+    "Lightfoot Halfling" : "25",
+    "Stout Halfling" : "25",
+    "Dragonborn" : "30",
+    "Forest Gnome" : "25",
+    "Rock Gnome" : "25",
+    "Half Elf" : "30",
+    "Half Orc" : "30",
+    "Tiefling" : "30"
+}
+baseLanguage = {
+    "Human" : "Common, Additional language of choice",
+    "Hill Dwarf" : "Common, Dwarven",
+    "Mountain Dwarf" : "Common, Dwarven",
+    "High Elf" : "Common, Elvish, Additional language of choice",
+    "Wood Elf" : "Common, Elvish",
+    "Dark Elf" : "Common, Elvish",
+    "Lightfoot Halfling" : "Common, Halfling",
+    "Stout Halfling" : "Common, Halfling",
+    "Dragonborn" : "Common, Draconic",
+    "Forest Gnome" : "Common, Gnomish",
+    "Rock Gnome" : "Common, Gnomish",
+    "Half Elf" : "Common, Elvish, Additional language of choice",
+    "Half Orc" : "Common, Orcish",
+    "Tiefling" : "Common, Infernal"
 }
 
 
@@ -355,8 +387,11 @@ health = classHealth[type] + modConstitution
 
 raceTraits = raceText[race]
 classTraits = classText[type]
+raceSpeed = baseSpeed[race]
+language = baseLanguage[race]
 
 playerName = input("Player Name: ")
+characterName = input("Character Name: ")
 playerHeight = input("Character Height: ")
 playerWeight = input("Character Weight: ")
 playerGender = input("Gender: ")
@@ -365,23 +400,29 @@ playerBackground = input("Background: ")
 
 f = open(playerName + ".txt", "w")
 f.write("Player Name: " + playerName + "\n")
-f.write("Gender: " + playerGender + "\n")
+f.write("Character Name: " + characterName + "\n")
 f.write("Race: " + race + "\n")
 f.write("Class: " + type + "\n")
-f.write("\n")
-f.write("Racial Traits: " + str(raceTraits) + "\n")
-f.write("Class Traits: " + str(classTraits) + "\n")
-f.write("\n")
+f.write("Gender: " + playerGender + "\n")
 f.write("Background: " + playerBackground + "\n")
 f.write("Height: " +  playerHeight + "\n")
 f.write("Weight: " + playerWeight + "\n")
 f.write("\n")
-f.write("Strength: " + str(strength) + " " + str(modStrength) + "\n")
-f.write("Dexterity: " + str(dexterity) + " " + str(modDexterity) + "\n")
-f.write("Constitution: " + str(constitution) + " " + str(modConstitution) + "\n")
-f.write("Intelligence: " + str(intelligence) + " " + str(modIntelligence) + "\n")
-f.write("Wisdom: " + str(wisdom) + " " + str(modWisdom) + "\n")
-f.write("Charisma: " + str(charisma) + " " + str(modCharisma) + "\n")
-f.write("\n")
 f.write("Health: " + str(health) + "\n")
+f.write("Proficiency Bonus: " + "+2" + "\n")
+f.write("\n")
+f.write("Strength: " + str(strength) + " , " + str(modStrength) + "\n")
+f.write("Dexterity: " + str(dexterity) + " , " + str(modDexterity) + "\n")
+f.write("Constitution: " + str(constitution) + " , " + str(modConstitution) + "\n")
+f.write("Intelligence: " + str(intelligence) + " , " + str(modIntelligence) + "\n")
+f.write("Wisdom: " + str(wisdom) + " , " + str(modWisdom) + "\n")
+f.write("Charisma: " + str(charisma) + " , " + str(modCharisma) + "\n")
+f.write("\n")
+f.write("Racial Traits: " + str(raceTraits) + "\n")
+f.write("\n")
+f.write("Class Traits: " + str(classTraits) + "\n")
+f.write("\n")
+f.write("Base Speed: " + str(raceSpeed) + "\n")
+f.write("Languages: " + str(language) + "\n")
+f.write("\n")
 f.close()
