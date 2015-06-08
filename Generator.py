@@ -377,7 +377,7 @@ baseGold = {
     "Cleric" : random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4),
     "Druid" : random.randrange(1,4)+ random.randrange(1,4),
     "Fighter" : random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4),
-    "Monk" : random.randrange(1,3),
+    "Monk" : random.randrange(1,2),
     "Paladin" : random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4),
     "Ranger" : random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4),
     "Rouge" : random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4),
