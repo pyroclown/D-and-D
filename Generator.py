@@ -94,7 +94,7 @@ def addHalfElf():
     global wisdom
     global charisma
     charisma += 2
-    dexterity += 1
+    constitution += 1
 def addHalfOrc():
     global strength
     global constitution
