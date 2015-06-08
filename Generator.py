@@ -327,7 +327,7 @@ raceText = {
 }
 classText = {
     "Barbarian" : "Test Works",
-    "Bard" : "Test Works",
+    "Bard" : "Confirmed",
     "Cleric" : "",
     "Druid" : "",
     "Fighter" : "",
