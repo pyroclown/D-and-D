@@ -385,8 +385,6 @@ baseGold = {
     "Warlock" : random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4),
     "Wizard" : random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4)
 }
-<<<<<<< HEAD
-=======
 typeProficiencies = {
     "Barbarian" : "\n-Armor: \n   Light, Medium, Shields \n-Weapons: \n   Simple, Martial",
     "Bard" : "\n-Armor: \n   Light \n-Weapons: \n   Simple, Hand Crossbow, Longsword, Rapier, Shortswords \n-Tools: \n   3 Musical Instruments",
@@ -429,7 +427,6 @@ skillProficiencies = {
     "Warlock" : "\n-Choose 2 \n   Arcana, Deception, History, Intimidation, Investigation, Nature, Religion",
     "Wizard" : "\n-Choose 2 \n   Arcana, History, Insight, Investigation, Medicine, Religion"
 }
->>>>>>> 38f1e45549fdde35a12bb5c2ad1d6380b2ea5ab5
 
 
 raceOptions[race]()
@@ -449,12 +446,10 @@ classTraits = classText[type]
 raceSpeed = baseSpeed[race]
 language = baseLanguage[race]
 gold = baseGold[type]
-<<<<<<< HEAD
-=======
+
 classProficiencies = typeProficiencies[type]
 savingThrows = typeSavingThrows[type]
 skills = skillProficiencies[type]
->>>>>>> 38f1e45549fdde35a12bb5c2ad1d6380b2ea5ab5
 
 playerName = input("Player Name: ")
 characterName = input("Character Name: ")
@@ -491,14 +486,11 @@ f.write("\n")
 f.write("Base Speed: " + str(raceSpeed) + "\n")
 f.write("Languages: " + str(language) + "\n")
 f.write("\n")
-<<<<<<< HEAD
-=======
 f.write("Proficiencies: " + str(classProficiencies) + "\n")
 f.write("\n")
 f.write("Saving Throw Proficiency: " + str(savingThrows) + "\n")
 f.write("\n")
 f.write("Skill Proficiencies: " + str(skills) + "\n")
 f.write("\n")
->>>>>>> 38f1e45549fdde35a12bb5c2ad1d6380b2ea5ab5
 f.write("Gold: " + str(gold) + "0" + "\n")
 f.close()
