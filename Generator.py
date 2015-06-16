@@ -385,6 +385,51 @@ baseGold = {
     "Warlock" : random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4),
     "Wizard" : random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4)+ random.randrange(1,4)
 }
+<<<<<<< HEAD
+=======
+typeProficiencies = {
+    "Barbarian" : "\n-Armor: \n   Light, Medium, Shields \n-Weapons: \n   Simple, Martial",
+    "Bard" : "\n-Armor: \n   Light \n-Weapons: \n   Simple, Hand Crossbow, Longsword, Rapier, Shortswords \n-Tools: \n   3 Musical Instruments",
+    "Cleric" : "\n-Armor: \n   Light, Medium, Shields \n-Weapons: Simple",
+    "Druid" : "\n-Armor: \n   Light, Medium, Shields, No metal \n-Weapons: \n   Clubs, Daggers, Darts, Javelins, Maces, Quarterstaff, Scimitar, Sickles, Slings, Spears \n-Tools: \n   Hearbalism Kit",
+    "Fighter" : "\n-Armor: \n   All armor and shields \n-Weapons: \n   Simple, Martial",
+    "Monk" : "\n-Armor: \n   None \n-Weapons: \n   Simple, Shortswords \n-Tools: \n   1 Artisans tool or Instrument",
+    "Paladin" : "\n-Armor: \n   All armor and shields \n-Weapons: \n   Simple Martial",
+    "Ranger" : "\n-Armor: \n   Light, Medium, Shields \n-Weapons: \n   Simple Martial",
+    "Rouge" : "\n-Armor: \n   Light \n-Weapons: \n   Simple, Hand Crossbow, Longsword, Rapier, Shortswords \n-Tools: \n   Thieves Tools",
+    "Sorcerer" : "\n-Armor: \n   None \n-Weapons: \n   Dagger, Darts, Slings, Quarterstaff, Light Crossbow",
+    "Warlock" : "\n-Armor: \n   Light \n-Weapons: \n   Simple",
+    "Wizard" : "\n-Armor: \n   None \n-Weapons: \n   Daggers, Darts, Slings, Quarterstaff, Light Crossbow"
+}
+typeSavingThrows ={
+    "Barbarian" : "\n-Strength, Constitution",
+    "Bard" : "\n-Dexterity, Charisma",
+    "Cleric" : "\n-Wisdom, Charisma",
+    "Druid" : "\n-Intelligence, Wisdom",
+    "Fighter" : "\n-Strength, Constitution",
+    "Monk" : "\n-Strength, Dexterity",
+    "Paladin" : "\n-Wisdom, Charisma",
+    "Ranger" : "\n-Strength, Dexterity",
+    "Rouge" : "\n-Dexterity, Intelligence",
+    "Sorcerer" : "\n-Constitution, Charisma",
+    "Warlock" : "\n-Wisdom, Charisma",
+    "Wizard" : "\n-Intelligence, Wisdom"
+}
+skillProficiencies = {
+    "Barbarian" : "\n-Choose 2 \n   Animal Handling, Athletics, Intimidation, Nature, Perception, Survival",
+    "Bard" : "\n-Choose 3 \n   All skills avalible",
+    "Cleric" : "\n-Choose 2 \n   History, Insight, Medicine, Persuasion, Religion",
+    "Druid" : "\n-Choose 2 \n   Arcana, Animal Handling, Insight, Medicine, Nature, Perception, Religion, Survival",
+    "Fighter" : "\n-Choose 2 \n   Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Perception, Survival",
+    "Monk" : "\n-Choose 2 \n   Acrobatics, Athletics, History, Insight, Religion, Stealth",
+    "Paladin" : "\n-Choose 2 \n   Athletics, Insight, Intimidation, Medicine, Persuasion, Religion",
+    "Ranger" : "\n-Choose 3 \n   Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, Survival",
+    "Rouge" : "\n-Choose 4 \n   Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Performance, Persuasion, Slight of Hand, Stealth",
+    "Sorcerer" : "\n-Choose 2 \n   Arcana, Deception, Insight, Intimidation, Persuasion, Religion",
+    "Warlock" : "\n-Choose 2 \n   Arcana, Deception, History, Intimidation, Investigation, Nature, Religion",
+    "Wizard" : "\n-Choose 2 \n   Arcana, History, Insight, Investigation, Medicine, Religion"
+}
+>>>>>>> 38f1e45549fdde35a12bb5c2ad1d6380b2ea5ab5
 
 
 raceOptions[race]()
@@ -404,6 +449,12 @@ classTraits = classText[type]
 raceSpeed = baseSpeed[race]
 language = baseLanguage[race]
 gold = baseGold[type]
+<<<<<<< HEAD
+=======
+classProficiencies = typeProficiencies[type]
+savingThrows = typeSavingThrows[type]
+skills = skillProficiencies[type]
+>>>>>>> 38f1e45549fdde35a12bb5c2ad1d6380b2ea5ab5
 
 playerName = input("Player Name: ")
 characterName = input("Character Name: ")
@@ -440,5 +491,14 @@ f.write("\n")
 f.write("Base Speed: " + str(raceSpeed) + "\n")
 f.write("Languages: " + str(language) + "\n")
 f.write("\n")
+<<<<<<< HEAD
+=======
+f.write("Proficiencies: " + str(classProficiencies) + "\n")
+f.write("\n")
+f.write("Saving Throw Proficiency: " + str(savingThrows) + "\n")
+f.write("\n")
+f.write("Skill Proficiencies: " + str(skills) + "\n")
+f.write("\n")
+>>>>>>> 38f1e45549fdde35a12bb5c2ad1d6380b2ea5ab5
 f.write("Gold: " + str(gold) + "0" + "\n")
 f.close()
