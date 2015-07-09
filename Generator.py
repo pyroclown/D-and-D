@@ -453,15 +453,18 @@ skills = skillProficiencies[type]
 
 playerName = input("Player Name: ")
 characterName = input("Character Name: ")
+playerAlignment = input("Alignment: ")
 playerHeight = input("Character Height: ")
 playerWeight = input("Character Weight: ")
 playerGender = input("Gender: ")
 playerBackground = input("Background: ")
 
 
+
 f = open(playerName + ".txt", "w")
 f.write("Player Name: " + playerName + "\n")
 f.write("Character Name: " + characterName + "\n")
+f.write("Alignment: " + playerAlignment +"\n")
 f.write("Race: " + race + "\n")
 f.write("Class: " + type + "\n")
 f.write("Gender: " + playerGender + "\n")
